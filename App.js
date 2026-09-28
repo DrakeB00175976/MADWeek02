@@ -1,23 +1,16 @@
-import {StyleSheet,Text,View}  from 'react-native';
-import React, {useState} from 'react';
-
+import { View, Text, TextInput } from "react-native";
+import React, { useState } from "react";
+import Logo from "./components/Logo"
 export default function App() {
-  const [fullname, setFullname] = useState("Drake Wanzu")
+  const [fullname, setFullname] = useState("Aparna");
   return (
     <View>
-      <Text style={styles.paragraph}>
-       Hello, {fullname}
-      </Text>
-      </View>
+    <Logo/>
+      <Text>Hello, World {fullname}</Text>
+      <TextInput
+        placeholder="enter your name"
+        onChangeText={(value) => setFullname(value)}
+      ></TextInput>
+    </View>
   );
-}
-
-const styles = StyleSheet.create({
-  
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-});
+}   
